@@ -6,8 +6,8 @@
 #define LEDPin 34        //LED Connection
 #define DHTTYPE DHT22    // DHT 22
 
-const char* ssid = "ESP32pleasework";   // your network SSID (name) 
-const char* pass = "Mango130";   // your network password
+const char* ssid = "alfonso";   // your network SSID (name) 
+const char* pass = "12345670";   // your network password
 
 DHT dht(DHTPIN, DHTTYPE);
 
