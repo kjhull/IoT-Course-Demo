@@ -1,10 +1,10 @@
 import requests
 
 # ThingSpeak channel details
-channel_id = 1742416
-write_api_key = 'FEZK7OO590RYWDV6'
+channel_id = ''
+write_api_key = ''  # Find in channel sharing settings
 
-# Data to send to the channel
+# Data to send to the channel - using dummy data
 field1_data = '10'
 field2_data = '20'
 
@@ -22,7 +22,7 @@ response = requests.post(api_endpoint, json=payload)
 
 # Check the response status
 if response.status_code == 200:
-    print('Data sent successfully to ThingSpeak!')
+    print('Successfully sent to ThingSpeak!')
 else:
     print('Failed to send data to ThingSpeak.')
     print('Response:', response.text)
