@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include "ThingSpeak.h"
 
-#define DHTPIN 13        // Digital pin connected to the DHT sensor
-#define LEDPin 34        //LED Connection
+#define DHTPIN 4        // Digital pin connected to the DHT sensor
+#define LEDPin 26        //LED Connection
 #define DHTTYPE DHT22    // DHT 22
 
 const char* ssid = "alfonso";   // your network SSID (name) 
@@ -20,7 +20,7 @@ void setup() {
   Serial.begin(9600);
   Serial.println(F("ESP32 to ThingSpeak"));
   dht.begin();
-
+  pinMode(LEDPin, OUTPUT);
   WiFi.mode(WIFI_STA);   
   ThingSpeak.begin(client);  // Initialize ThingSpeak
 }
@@ -36,7 +36,7 @@ void loop() {
     } 
     Serial.println("\nConnected.");
   }
-  
+  digitalWrite(LEDPin, LOW);
   delay(15000);
 
   // Reading temperature or humidity takes about 250 milliseconds!
@@ -62,6 +62,8 @@ void loop() {
   int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
   if(x == 200){
     Serial.println("Channel update successful.");
+    digitalWrite(LEDPin, HIGH);
+    delay(1000);
   }
   else{
     Serial.println("Problem updating channel. HTTP error code " + String(x));
