@@ -10,7 +10,6 @@ field2_data = '20'
 
 # ThingSpeak API endpoint
 api_endpoint = f'https://api.thingspeak.com/update?api_key={write_api_key}'
-
 # Prepare the payload with field values
 payload = {
     'field1': field1_data,
