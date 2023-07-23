@@ -2,19 +2,19 @@
 #include <WiFi.h>
 #include "ThingSpeak.h"
 
-#define DHTPIN 4        // Digital pin connected to the DHT sensor
-#define LEDPin 26        //LED Connection
+#define DHTPIN 13        // Digital pin connected to the DHT sensor
+#define LEDPin 25        //LED Connection
 #define DHTTYPE DHT22    // DHT 22
 
-const char* ssid = "alfonso";   // your network SSID (name) 
-const char* pass = "12345670";   // your network password
+const char* ssid = "";   // your network SSID (name) 
+const char* pass = "";   // your network password
 
 DHT dht(DHTPIN, DHTTYPE);
 
 WiFiClient  client;
 
-unsigned long myChannelNumber = 1742416;
-const char * myWriteAPIKey = "FEZK7OO590RYWDV6";
+unsigned long myChannelNumber = ;
+const char * myWriteAPIKey = "";
 
 void setup() {
   Serial.begin(9600);

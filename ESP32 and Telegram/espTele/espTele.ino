@@ -7,12 +7,12 @@
 #define DHTPIN 13        // Digital pin connected to the DHT sensor
 #define ledPin 25        //LED Connection
 #define DHTTYPE DHT22    // DHT 22
-#define BOTtoken "6296258969:AAF9flqrBUNUpK2cCiG3FLVuQdhs2Nk_XRM"  // your Bot Token (Get from Botfather)
-#define chat_id "-1001934393214"
+#define BOTtoken ""  // your Bot Token (Get from Botfather)
+#define chat_id ""
 
 // Replace with your network credentials
-const char* ssid = "alfonso";   // your network SSID (name) 
-const char* pass = "12345670";   // your network password
+const char* ssid = "";   // your network SSID (name) 
+const char* pass = "";   // your network password
 
 WiFiClientSecure client;
 DHT dht(DHTPIN, DHTTYPE);
@@ -80,7 +80,6 @@ void handleNewMessages(int numNewMessages) {
 
 void setup() {
   Serial.begin(9600);
-
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, ledState);
   dht.begin();

@@ -9,8 +9,8 @@
 
 // Replace the next variables with your SSID/Password combination
 
-const char* ssid = "Paradiso_202";
-const char* pass = "saskeg123!!";
+const char* ssid = "";
+const char* pass = "";
 
 const char* mqtt_server = "192.168.1.100";
 
@@ -30,6 +30,7 @@ void setup() {
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pass);
   dht.begin();
+  
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
 
